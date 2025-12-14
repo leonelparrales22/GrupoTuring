@@ -1,0 +1,150 @@
+==========================================================
+  COMANDOS GIT - COPIAR Y PEGAR PARA PUBLICAR
+==========================================================
+
+IMPORTANTE: Reemplaza "TU-USUARIO" con tu usuario de GitHub
+
+----------------------------------------------------------
+OPCIÓN 1: PRIMERA VEZ (Repositorio nuevo)
+----------------------------------------------------------
+
+# 1. Abrir terminal en la carpeta del proyecto
+cd C:\Users\edwar\Documents\Cursor\GrupoTuring
+
+# 2. Inicializar Git
+git init
+
+# 3. Agregar todos los archivos
+git add .
+
+# 4. Hacer commit inicial
+git commit -m "Initial commit - Grupo Turing Landing Page Ecuador"
+
+# 5. Conectar con GitHub (reemplaza TU-USUARIO)
+git remote add origin https://github.com/TU-USUARIO/grupoturing-landing.git
+
+# 6. Cambiar a rama main
+git branch -M main
+
+# 7. Subir archivos
+git push -u origin main
+
+# 8. Activar GitHub Pages:
+#    - Ve a: https://github.com/TU-USUARIO/grupoturing-landing/settings/pages
+#    - Source: main branch
+#    - Click Save
+#    - Espera 5 minutos
+#    - Tu sitio estará en: https://TU-USUARIO.github.io/grupoturing-landing/
+
+----------------------------------------------------------
+OPCIÓN 2: ACTUALIZAR (Si ya publicaste antes)
+----------------------------------------------------------
+
+# 1. Ver cambios
+git status
+
+# 2. Agregar todos los cambios
+git add .
+
+# 3. Hacer commit con mensaje descriptivo
+git commit -m "Actualización: [describe qué cambiaste]"
+
+# 4. Subir cambios
+git push
+
+# Los cambios aparecerán en 1-2 minutos en tu sitio
+
+----------------------------------------------------------
+COMANDOS ÚTILES
+----------------------------------------------------------
+
+# Ver historial de commits
+git log --oneline
+
+# Ver estado actual
+git status
+
+# Ver archivos modificados
+git diff
+
+# Deshacer cambios locales (CUIDADO)
+git reset --hard HEAD
+
+# Ver URL del repositorio remoto
+git remote -v
+
+# Cambiar URL del repositorio (si te equivocaste)
+git remote set-url origin https://github.com/TU-USUARIO/nuevo-repo.git
+
+----------------------------------------------------------
+CREAR REPOSITORIO EN GITHUB (Antes del paso 5)
+----------------------------------------------------------
+
+1. Ve a: https://github.com/new
+2. Repository name: grupoturing-landing
+3. Description: Landing page oficial de Grupo Turing Ecuador
+4. Public (importante para GitHub Pages gratis)
+5. NO marcar "Add a README file"
+6. Click "Create repository"
+7. Volver a la terminal y continuar con paso 5
+
+----------------------------------------------------------
+PROBLEMAS COMUNES
+----------------------------------------------------------
+
+ERROR: "fatal: not a git repository"
+SOLUCIÓN: Asegúrate de estar en la carpeta correcta
+         cd C:\Users\edwar\Documents\Cursor\GrupoTuring
+
+ERROR: "fatal: remote origin already exists"
+SOLUCIÓN: Elimina y vuelve a agregar
+         git remote remove origin
+         git remote add origin https://github.com/TU-USUARIO/grupoturing-landing.git
+
+ERROR: "Permission denied"
+SOLUCIÓN: Configura tu usuario y email de GitHub
+         git config --global user.name "Tu Nombre"
+         git config --global user.email "tu@email.com"
+
+ERROR: "failed to push"
+SOLUCIÓN: Primero jala los cambios
+         git pull origin main --allow-unrelated-histories
+         git push -u origin main
+
+----------------------------------------------------------
+VERIFICAR QUE TODO FUNCIONÓ
+----------------------------------------------------------
+
+1. Ve a: https://github.com/TU-USUARIO/grupoturing-landing
+2. Deberías ver todos los archivos
+3. Ve a: Settings → Pages
+4. Debería decir: "Your site is live at ..."
+5. Click en el enlace para ver tu sitio
+
+----------------------------------------------------------
+ACTUALIZAR DOMINIO PERSONALIZADO
+----------------------------------------------------------
+
+Si ya configuraste grupoturing.com en tu proveedor DNS:
+
+1. Ve a: Settings → Pages
+2. Custom domain: grupoturing.com
+3. Click Save
+4. Espera 24 horas para verificación DNS
+5. Marca "Enforce HTTPS"
+
+==========================================================
+           ¡LISTO PARA PUBLICAR! 🚀
+==========================================================
+
+Tu sitio estará disponible en:
+https://TU-USUARIO.github.io/grupoturing-landing/
+
+O con dominio personalizado:
+https://grupoturing.com (después de configurar DNS)
+
+Tiempo total: 5-10 minutos
+Costo: $0 (GitHub Pages es gratis)
+
+==========================================================
+
